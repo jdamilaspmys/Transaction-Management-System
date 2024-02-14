@@ -9,6 +9,7 @@ const { connect } = require('./config/db');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var accountRouter = require('./routes/accounts')
 
 var app = express();
 
@@ -26,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/api/v1/users', usersRouter);
+app.use('/api/v1/accounts', accountRouter);
 
 // Swagger JSDoc configuration
 const swaggerOptions = {

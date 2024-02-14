@@ -1,7 +1,7 @@
 // utils/authMiddleware.js
 
 const jwt = require('jsonwebtoken');
-const { forbiddenRes, unauthorizedRes } = require('./response');
+const { forbiddenRes, unauthorizedRes } = require('../util/response');
 require('dotenv').config();
 
 const extractTokenFromHeader = (authorizationHeader) => {
