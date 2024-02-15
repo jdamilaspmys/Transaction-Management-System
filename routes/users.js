@@ -31,10 +31,23 @@ require('dotenv').config();
  *     responses:
  *       201:
  *         description: User registered successfully
+ *         content:
+ *           application/json:
+ *             example:
+ *               message: User registered successfully
+ *               username: abc1234
  *       400:
  *         description: Invalid request body
+ *         content:
+ *           application/json:
+ *             example:
+ *               message: Email is invalid
  *       409:
  *         description: Email already exists
+ *         content:
+ *           application/json:
+ *             example:
+ *               message: Email already exists
  */
 // Validation middleware for registration
 const validateRegistration = [
@@ -98,10 +111,22 @@ router.post('/register', validateRegistration, async (req, res) => {
  *     responses:
  *       200:
  *         description: User logged in successfully
+ *         content:
+ *           application/json:
+ *             example:
+ *               token: "JWT_TOKEN_HERE"
  *       400:
  *         description: Invalid request body
+ *         content:
+ *           application/json:
+ *             example:
+ *               message: Invalid email or password
  *       401:
- *         description: Invalid username or password
+ *         description: Invalid email or password
+ *         content:
+ *           application/json:
+ *             example:
+ *               message: Invalid email or password
  */
 const validateLogin = [
   check('username').notEmpty().withMessage('Username is required'),

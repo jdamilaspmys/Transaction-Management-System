@@ -36,7 +36,9 @@ const swaggerOptions = {
     info: {
       title: 'Transsaction Management System NodeJs/Express.js App',
       version: '1.0.0',
-      description: 'API documentation for Transaction Management Node.js/Express.js app',
+      description: `API documentation for Transaction Management Node.js/Express.js app\n
+      * BearerAuth (apiKey) Example - 'Bearer eyJhbGciOiJIUzI1NiI...QyX47Sdh10'
+      `,
     },
     components: {
       securitySchemes: {
